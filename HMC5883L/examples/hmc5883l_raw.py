@@ -9,6 +9,6 @@ mag.initialize()
 while True:
     data = mag.getHeading()
     
-    print(data['x']),
-    print(data['y']),
-    print(data['z'])
+    print(data['x'],
+          data['y'],
+          data['z'])

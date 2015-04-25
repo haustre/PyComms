@@ -1417,9 +1417,9 @@ class MPU6050:
                 result = self.i2c.readU8(self.MPU6050_RA_MEM_R_W)
                 
                 if result != data[i]:
-                    print(data[i]),
-                    print(result),
-                    print(address)
+                    print(data[i],
+                          result,
+                          address)
                     
             # reset adress to 0 after reaching 255
             if address == 255:

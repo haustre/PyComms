@@ -113,7 +113,7 @@ class PyComms:
         try:
             self.bus.write_i2c_block_data(self.address, reg, list)
         except (IOError):
-            print ("Error accessing 0x%02X: Check your I2C address" % self.address)
+            print("Error accessing 0x%02X: Check your I2C address" % self.address)
         return -1    
     
     def write8(self, reg, value):
@@ -121,7 +121,7 @@ class PyComms:
         try:
             self.bus.write_byte_data(self.address, reg, value)
         except (IOError):
-            print ("Error accessing 0x%02X: Check your I2C address" % self.address)
+            print("Error accessing 0x%02X: Check your I2C address" % self.address)
             return -1
 
     def readU8(self, reg):
@@ -130,7 +130,7 @@ class PyComms:
             result = self.bus.read_byte_data(self.address, reg)
             return result
         except (IOError):
-            print ("Error accessing 0x%02X: Check your I2C address" % self.address)
+            print("Error accessing 0x%02X: Check your I2C address" % self.address)
             return -1
 
     def readS8(self, reg):
@@ -142,7 +142,7 @@ class PyComms:
             else:
                 return result
         except (IOError):
-            print ("Error accessing 0x%02X: Check your I2C address" % self.address)
+            print("Error accessing 0x%02X: Check your I2C address" % self.address)
             return -1
 
     def readU16(self, reg):
@@ -152,7 +152,7 @@ class PyComms:
             result = (hibyte << 8) + self.bus.read_byte_data(self.address, reg + 1)
             return result
         except (IOError):
-            print ("Error accessing 0x%02X: Check your I2C address" % self.address)
+            print("Error accessing 0x%02X: Check your I2C address" % self.address)
             return -1
 
     def readS16(self, reg):
@@ -164,5 +164,5 @@ class PyComms:
             result = (hibyte << 8) + self.bus.read_byte_data(self.address, reg + 1)
             return result
         except (IOError):
-            print ("Error accessing 0x%02X: Check your I2C address" % self.address)
+            print("Error accessing 0x%02X: Check your I2C address" % self.address)
             return -1
